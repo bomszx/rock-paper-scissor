@@ -2,17 +2,15 @@ let inputs = ['rock', 'paper', 'scissor']
 let playerScore = 0;
 let computerScore = 0;
 
+/* computer rock paper input randomization */
+
 function computerPlay () {
     let x = Math.floor(Math.random() * inputs.length);
     return inputs[x]
 }
 
-/*
-rock > scissor
-scissor > paper
-paper > rock
 
-*/
+/* rockpaperscissors logic & player scoring */
 
 function playRound (playerSelection, computerSelection) {
     playerSelection = prompt('choose your method', '');
@@ -46,18 +44,29 @@ function playRound (playerSelection, computerSelection) {
     return playerScore, computerScore;
 }
 
-function game() {
-    for(let i = 0; i < 5; i++) {
-        playRound()
+// selecting the buttons
+let buttons = document.querySelectorAll('.button');
+
+// loop through nodelist of buttons
+buttons.forEach(button => button.addEventListener('click', playRound))
+
+
+
+
+/*game function, run the game with 5 rounds */
+
+// function game() {
+//     for(let i = 0; i < 5; i++) {
+//         playRound()
         
-        console.log(playerScore, computerScore)
-        
-        if(playerScore > computerScore) {
-            console.log(`Player wins`)
-        } else if (computerScore > playerScore) {
-            console.log(`Computer wins`)
-        } else {
-            console.log(`It's a tie`)
-        }
-    }
-}
+//         if(playerScore > computerScore) {
+//             console.log(`Player wins`)
+//         } else if (computerScore > playerScore) {
+//             console.log(`Computer wins`)
+//         } else {
+//             console.log(`It's a tie`)
+//         }
+//     }
+//     console.log(playerScore, computerScore)
+// }
+
