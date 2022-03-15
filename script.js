@@ -48,6 +48,8 @@ function playRound (e) {
     }
     player.innerText = playerScore;
     computer.innerText = computerScore;
+    determineWinner()
+    hideButtons()
 }
 
 // Selectors
@@ -61,4 +63,25 @@ buttons.forEach(function(button) {
 function buttonClick (e) {
     // Passed the e as an argument to the playRound function for our playerSelection
     playRound(e)
+}
+
+function determineWinner () {
+    let banner = document.querySelector('.message');
+    if(playerScore == 5) {
+        banner.innerText = 'Player Wins!'
+    } else if (computerScore == 5)
+        banner.innerText = 'Computer Wins!'
+}
+
+function hideButtons () {
+    let buttons = document.querySelector('.buttons');
+    let banner = document.querySelector('.message');
+
+    if(playerScore == 5) {
+        buttons.style.visibility = 'hidden';
+        banner.innerText = 'You won! Click F5 or refresh the page to play another round!'
+    } else if (computerScore == 5) {
+        buttons.style.visibility = 'hidden';
+        banner.innerText = 'You lost! Click F5 or refresh the page to play another round!'
+    }
 }
