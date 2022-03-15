@@ -2,20 +2,20 @@ let inputs = ['rock', 'paper', 'scissor']
 let playerScore = 0;
 let computerScore = 0;
 
-/* computer rock paper input randomization */
+// computer rock paper input randomization 
 
 function computerPlay() {
     let x = Math.floor(Math.random() * inputs.length);
     return inputs[x]
 }
 
-/* rockpaperscissors logic & player scoring */
+// rockpaperscissors logic & player scoring 
 
-function playRound (playerSelection, computerSelection) {
-    computerSelection = computerPlay()
+function playRound (e) {
+    computerSelection = computerPlay();
+    playerSelection = e.target.id;
 
     console.log(playerSelection)
-    console.log(computerSelection)
 
     if(playerSelection == computerSelection) {
         console.log('It\'s a tie!')
@@ -42,32 +42,16 @@ function playRound (playerSelection, computerSelection) {
     return playerScore, computerScore;
 }
 
+// Selectors
+let buttons = document.querySelectorAll('button');
+console.log(buttons);
 
+buttons.forEach(function(button) {
+    button.addEventListener('click', buttonClick);
+});
 
-// selecting the buttons
-let buttons = document.querySelectorAll('.button');
+function buttonClick (e) {
+    console.log(e.target.id);
 
-// loop through nodelist of buttons, then added an event listener to listen for licks, after a click event it would run the playRound function that would take the id of the button that was clicked as its parameter/player choice
-buttons.forEach(button => button.addEventListener('click', function() {
-    playRound(button.id)
-}))
-
-
-
-/*game function, run the game with 5 rounds */
-
-function game() {
-    for(let i = 0; i < 5; i++) {
-        playRound()
-        
-        if(playerScore > computerScore) {
-            console.log(`Player wins`)
-        } else if (computerScore > playerScore) {
-            console.log(`Computer wins`)
-        } else {
-            console.log(`It's a tie`)
-        }
-    }
-    console.log(playerScore, computerScore)
+    playRound(e)
 }
-
