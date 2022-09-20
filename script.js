@@ -12,6 +12,9 @@ rock > scissor
 scissor > paper
 paper > rock
 
+no global variables
+use the module method, in IIFE
+
 */
 
 function playRound (playerSelection, computerSelection) {
