@@ -17,18 +17,22 @@ use the module method, in IIFE
 
 1. add event listerners on the player & computer icons
     1.1 update results icon depending on the chioce
-    1.2 add class that would highlight icon of choice
+    1.2 add class that would higzhlight icon of choice
     1.3 append result icon with player/computer choice
 2.
-*/
-const player = (() => {
-    const player = document.querySelector('.player')
-    const icons = document.getElementById('#SVGObject')
 
-    player.addEventListener('click', (e)=> {
-        console.log(e)
+*/
+
+const player = (() => {
+    const svgIcons = document.querySelectorAll('#SVGObject')
+
+    const loopIcons = svgIcons.forEach(function(el) {
+        el.addEventListener('click',function(e) {
+            console.log('hey')
+        })    
     })
-    return {player}
+
+    return {loopIcons}
 })();
 
 
@@ -79,3 +83,19 @@ function game() {
         }
     }
 }
+
+  
+const removeFromArray = function(...args) {
+    const array = args[0]
+    const newArray = [];
+
+    array.forEach((item) => {
+        if(!args.includes(item)) {
+            newArray.push(item)
+        }
+    })
+    return newArray;
+};
+
+
+console.log(removeFromArray([1,2,3,4,5], 1))

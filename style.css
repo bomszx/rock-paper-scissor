@@ -7,7 +7,8 @@
 .container {
     display: flex;
     flex-direction: column;
-    margin: 6rem
+    margin: 6rem;
+
 }
 
 .grid-container {
@@ -24,8 +25,9 @@
     align-items: center;
     flex-direction: column;
 
-    grid-row:  2/ 3;
+    grid-row:  2/ 3;        
 }
+
 
 .player {
     grid-column: 1 / 2;
@@ -48,9 +50,32 @@
     justify-content: center;
 }
 
+.player-div > img, .computer-div > img {
+    height: 7rem;
+    width: 7rem;
+    display: flex;
+    align-items: center;
+}
+
 /* Results */
 .result-icons {
     display: flex;
     align-items: center;
+
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 800px) {
+
+    .grid-container {
+        max-width: 480px;
+        height: 50vh;
+    }
+
+    .result-icons {
+        display: flex;
+        flex-direction: column;
+    }
 
 }
