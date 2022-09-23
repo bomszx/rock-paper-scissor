@@ -32,17 +32,24 @@ const computer = (() => {
     }
 })()
 
-// Player actions, should return player choice for our playRound func
+// Player actions, should return player choice for our playRound func, so all player actions will be here
 const player = (() => {
     let choice;
-    const img = document.querySelector('.player-div')
-})()
-
-const clickListener = ((e) => {
     const img = document.querySelector('.player-div');
-    img.addEventListener('click', function(e) {
-        console.log('hi')
-    })
+
+    const imgListener = () => {
+        img.addEventListener('click', savePlayerChoice)
+    }
+
+    const savePlayerChoice = (e) => {
+        choice = e.target.id
+        console.log(choice)
+    }
+
+    return {
+        imgListener
+    }
 })()
 
+player.imgListener()
 // const playRound = ()
