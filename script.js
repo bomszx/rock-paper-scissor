@@ -1,7 +1,4 @@
-const computerPlay = (() => {
-    let x = Math.floor(Math.random() * inputs.length);
-    return inputs[x]
-})()
+
 
 /*
 rock > scissor
@@ -19,9 +16,33 @@ use the module method, in IIFE
 
 */
 
+// Computer actions, should return computer choice for our playRound func
+const computer = (() => {
+    let choice;
+    const inputs = ['rock', 'paper', 'scissors']
+
+    const computerChoice = () => {
+        let x = Math.floor(Math.random() * inputs.length);
+        choice = inputs[x];
+        return choice;
+    }
+
+    return {
+        computerChoice
+    }
+})()
+
+// Player actions, should return player choice for our playRound func
+const player = (() => {
+    let choice;
+    const img = document.querySelector('.player-div')
+})()
+
 const clickListener = ((e) => {
     const img = document.querySelector('.player-div');
     img.addEventListener('click', function(e) {
         console.log('hi')
     })
 })()
+
+// const playRound = ()
