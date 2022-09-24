@@ -1,5 +1,3 @@
-
-
 /*
 rock > scissor
 scissor > paper
@@ -23,8 +21,8 @@ const computer = (() => {
 
     const computerChoice = () => {
         let x = Math.floor(Math.random() * inputs.length);
-        choice = inputs[x];
-        return choice;
+        choice = inputs[x].toString();
+        console.log(choice, typeof(choice))
     }
 
     return {
@@ -38,18 +36,21 @@ const player = (() => {
     const img = document.querySelector('.player-div');
 
     const imgListener = () => {
-        img.addEventListener('click', savePlayerChoice)
+        img.addEventListener('click', playerChoice)
     }
 
-    const savePlayerChoice = (e) => {
+    const playerChoice = (e) => {
         choice = e.target.id
         console.log(choice)
     }
 
     return {
-        imgListener
+        playerChoice, imgListener
     }
 })()
 
 player.imgListener()
-// const playRound = ()
+
+const playRound = (() => {
+
+})()
