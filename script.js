@@ -42,3 +42,10 @@ const getComputerChoice = (() => {
     return computerInput
 })
 
+const playRound = ((a, b) => {
+    a = getComputerChoice()
+     b = 'rock' 
+    console.log(a, b)
+})
+
+playRound()
