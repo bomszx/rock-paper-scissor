@@ -8,27 +8,26 @@ use the module method, in IIFE
 
 */
 
-const player = (() => {
-    const iconsDiv = document.querySelector('.player-div')
-    let playerChoice 
+// const player = (() => {
+//     const iconsDiv = document.querySelector('.player-div')
+//     let playerChoice 
 
-    iconsDiv.addEventListener('click', function(e) {
-        playerChoice = e.target.id
-        console.log(playerChoice)
-    })
-})();
+//     iconsDiv.addEventListener('click', function(e) {
+//         playerChoice = e.target.id
+//         console.log(playerChoice)
+//     })
+// })();
 
-const computer = (() => {
+// const computer = (() => {
 
-})();
+// })();
 
+//how to get playerSelection to from click event and, playRound to run
 const playerSelection = (() => {
     const icons = document.querySelector('.player-div')
     let playerInput;
 
-    icons.addEventListener('click', (e) => {
-        playerInput = e.target.id
-    })
+    icons.addEventListener('click', playRound)
 
     return playerInput
 })
