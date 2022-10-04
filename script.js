@@ -22,16 +22,26 @@ use the module method, in IIFE
 
 // })();
 
-//how to get playerSelection to from click event and, playRound to run
-const playerSelection = (() => {
-    const icons = document.querySelector('.player-div')
-    let playerInput;
+// Add an event listener to EACH icon/btn that would run playRound with the correct choice for the player
+// const playerSelection = (() => {
+//     //store icons in array/htmlcollection
+//     const icons = document.getElementsByClassName('player-icon')
+//     let playerChoice;
 
-    icons.addEventListener('click', playRound)
+//     //loop through array & add eventlistener to each el in arr
+//     for(let icon of icons) {
+//         icon.addEventListener('click', function(e) {
+//             playerChoice = e.target.id
+//         })
+//         return playerChoice
+//     }
 
-    return playerInput
-})
+//     // ** find a way to pass the id to the playRound func
+//     // *** pass the el.id as an argument to the playRound funct, funct('rock) > playRound('funct('rock')', compChoice)
 
+//     //each el should pertain to specific icon
+//     //run playRound funct when an icon is clicked
+// })
 
 const getComputerChoice = (() => {
     const inputs = ['rock', 'paper', 'scissors']
@@ -40,11 +50,15 @@ const getComputerChoice = (() => {
 
     return computerInput
 })
-
 const playRound = ((a, b) => {
-    a = getComputerChoice()
-     b = 'rock' 
+    b = getComputerChoice()
     console.log(a, b)
 })
 
-playRound()
+const paper = document.getElementById('paper')
+
+paper.addEventListener('click', playRound)
+
+
+// playerChoice()
+// playRound()
