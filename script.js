@@ -25,7 +25,7 @@ function countdown(n){
 
 const playerSelection = "rock"
 
-function computerChoice() {
+const computerChoice = () => {
   let compSelection;
   let arr = ['rock', 'paper', 'scissor'];
   let i = Math.floor(Math.random() * 3);
@@ -38,7 +38,7 @@ const playRound = (playerChoice, getComputerChoice) => {
   console.log(getComputerChoice())
 }
 
-console.log(playRound(playerSelection, computerChoice))
+playRound(playerSelection, computerChoice)
 
 
 // getComputerChoice() // this needs to be assigned to a variable so we can use it as a parameter but i don't wanna pollute my global scope
