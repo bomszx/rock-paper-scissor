@@ -26,17 +26,19 @@ function countdown(n){
 const playerSelection = "rock"
 
 const computerChoice = () => {
-  let compSelection;
   let arr = ['rock', 'paper', 'scissor'];
   let i = Math.floor(Math.random() * 3);
-  
-  return compSelection = arr[i];
+  return arr[i];
+ 
 }
 
 const playRound = (playerChoice, getComputerChoice) => {
-  console.log(playerChoice)
-  console.log(getComputerChoice())
-}
+  let compSelection = getComputerChoice()
+  if(compSelection == playerChoice) {
+    console.log('1')
+  }
+ }
+
 
 playRound(playerSelection, computerChoice)
 
