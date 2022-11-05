@@ -35,12 +35,18 @@ const computerChoice = () => {
 const playRound = (playerChoice, getComputerChoice) => {
   let compSelection = getComputerChoice()
   if(compSelection == playerChoice) {
-    console.log('1')
+    console.log('same', compSelection, playerChoice)
+  } else {
+    console.log(compSelection, playerChoice)
   }
  }
 
+ const game = () => {
+  for(let i = 0; i < 5; i++) {
+    playRound(playerSelection, computerChoice)
+  }
+}
 
-playRound(playerSelection, computerChoice)
 
 
 // getComputerChoice() // this needs to be assigned to a variable so we can use it as a parameter but i don't wanna pollute my global scope
