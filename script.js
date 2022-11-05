@@ -23,7 +23,6 @@ function countdown(n){
   }
 }
 
-const playerSelection = "rock"
 
 const computerChoice = () => {
   let arr = ['rock', 'paper', 'scissor'];
@@ -33,20 +32,22 @@ const computerChoice = () => {
 }
 
 const playRound = (playerChoice, getComputerChoice) => {
-  let compSelection = getComputerChoice()
-  if(compSelection == playerChoice) {
-    console.log('same', compSelection, playerChoice)
+  let compChoice = getComputerChoice()
+  console.log(playerChoice, compChoice)
+  if(compChoice == playerChoice) {
+    console.log('same')
+    return 'Same'
   } else {
-    console.log(compSelection, playerChoice)
+    console.log('not same')
+    return 'Not same'
   }
  }
 
  const game = () => {
   for(let i = 0; i < 5; i++) {
-    playRound(playerSelection, computerChoice)
+    playerChoice = prompt("What it'll be")
+    playRound(playerChoice, computerChoice)
   }
-}
-
-
+ }
 
 // getComputerChoice() // this needs to be assigned to a variable so we can use it as a parameter but i don't wanna pollute my global scope
