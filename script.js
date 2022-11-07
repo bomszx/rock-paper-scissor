@@ -43,11 +43,17 @@ const playRound = (playerChoice, getComputerChoice) => {
   }
  }
 
- const game = () => {
-  for(let i = 0; i < 5; i++) {
-    playerChoice = prompt("What it'll be")
-    playRound(playerChoice, computerChoice)
-  }
- }
+//  const game = () => {
+//   for(let i = 0; i < 5; i++) {
+//     playerChoice = prompt("What it'll be")
+//     playRound(playerChoice, computerChoice)
+//   }
+//  }
+
+const rock = () => {
+  document.getElementById('rock').addEventListener('click', () => {
+    console.log('rock')
+  })
+}
 
 // getComputerChoice() // this needs to be assigned to a variable so we can use it as a parameter but i don't wanna pollute my global scope
