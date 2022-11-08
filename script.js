@@ -27,14 +27,21 @@ function countdown(n){
 const computerChoice = () => {
   let arr = ['rock', 'paper', 'scissor'];
   let i = Math.floor(Math.random() * 3);
-  return arr[i];
- 
+  return arr[i]; 
 }
 
-const playRound = (playerChoice, getComputerChoice) => {
-  let compChoice = getComputerChoice()
-  console.log(playerChoice, compChoice)
-  if(compChoice == playerChoice) {
+const playerChoice = () => {
+  let choices = document.querySelectorAll('.player-icon').forEach((choice => {
+    choice.addEventListener('click', () => {
+      console.log(choice.id)
+    })
+  }))
+}
+playerChoice()
+
+const playRound = (getplayerChoice, getComputerChoice) => {
+  getComputerChoice = computerChoice()
+  if(getComputerChoice == playerChoice) {
     console.log('same')
     return 'Same'
   } else {
@@ -43,17 +50,12 @@ const playRound = (playerChoice, getComputerChoice) => {
   }
  }
 
+ playRound('rock', computerChoice)
+// playRound('rock', computerChoice())
 //  const game = () => {
 //   for(let i = 0; i < 5; i++) {
 //     playerChoice = prompt("What it'll be")
 //     playRound(playerChoice, computerChoice)
 //   }
 //  }
-
-const rock = () => {
-  document.getElementById('rock').addEventListener('click', () => {
-    console.log('rock')
-  })
-}
-
 // getComputerChoice() // this needs to be assigned to a variable so we can use it as a parameter but i don't wanna pollute my global scope
