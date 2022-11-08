@@ -24,24 +24,27 @@ function countdown(n){
 }
 
 
-const computerChoice = () => {
+
+
+
+
+let computerChoice = () => {
   let arr = ['rock', 'paper', 'scissor'];
   let i = Math.floor(Math.random() * 3);
   return arr[i]; 
 }
 
-const playerChoice = () => {
-  let choices = document.querySelectorAll('.player-icon').forEach((choice => {
-    choice.addEventListener('click', () => {
-      console.log(choice.id)
-    })
+let playerChoice = () => {
+  let pChoice;
+  document.querySelectorAll('.player-icon').forEach((icon) => icon.addEventListener('click', (e) => {
+    pChoice = e.target.id
+    playRound(pChoice, computerChoice())
   }))
 }
-playerChoice()
 
 const playRound = (getplayerChoice, getComputerChoice) => {
-  getComputerChoice = computerChoice()
-  if(getComputerChoice == playerChoice) {
+  console.log('player = '+ getplayerChoice, 'computer = ' + getComputerChoice)
+  if(getComputerChoice == getplayerChoice) {
     console.log('same')
     return 'Same'
   } else {
@@ -50,8 +53,17 @@ const playRound = (getplayerChoice, getComputerChoice) => {
   }
  }
 
- playRound('rock', computerChoice)
-// playRound('rock', computerChoice())
+playerChoice()
+
+
+
+
+
+
+
+
+//  playRound(playerChoice(), computerChoice())
+
 //  const game = () => {
 //   for(let i = 0; i < 5; i++) {
 //     playerChoice = prompt("What it'll be")
