@@ -23,23 +23,33 @@ function countdown(n){
   }
 }
 
-
-
-
-
-
-let computerChoice = () => {
+// random num to represent computer choice
+const computerChoice = () => {
   let arr = ['rock', 'paper', 'scissor'];
   let i = Math.floor(Math.random() * 3);
   return arr[i]; 
 }
 
-let playerChoice = () => {
+// eventlisteners to btn that assigns the click event to the selected icon then runs the playRound fn with the selected click event target
+const playerChoice = () => {
   let pChoice;
   document.querySelectorAll('.player-icon').forEach((icon) => icon.addEventListener('click', (e) => {
+    //click will call our playRound fn
     pChoice = e.target.id
     playRound(pChoice, computerChoice())
+    updateBanner()
   }))
+}
+
+const updateBanner = (playerIcon, computerIcon) => {
+  let rock = document.createElement('img')
+  rock.src = "./svg/rock.png"
+
+  let player = document.getElementById('player-choice')
+
+  let computer = document.getElementById('computer-choice')
+
+  player.src = "./svg/rock.png"
 }
 
 const playRound = (getplayerChoice, getComputerChoice) => {
