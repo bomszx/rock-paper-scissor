@@ -5,6 +5,9 @@ const computerChoice = () => {
   return  arr[i]; 
 }
 
+let playerScore = 0;
+let computerScore = 0;
+
 // eventlisteners to btn that assigns the click event to the selected icon then runs the playRound fn with the selected click event target
 const playerChoice = () => {
   let pChoice;
@@ -28,10 +31,9 @@ const updateBanner = (playerIcon, computerIcon) => {
 }
 
 //fn to update the player/comp score, we pass the variables from playRound
-const updateScore = (playerScore, computerScore) => {
-  let pScore = document.getElementById('pScore');
-  let compSccore = document.getElementById('compScore');
-
+const updateScore = () => {
+  document.getElementById('pScore').innerText = playerScore;
+  document.getElementById('compScore').innerText = computerScore;
 }
 
 const updateResult = (text) => {
@@ -40,26 +42,43 @@ const updateResult = (text) => {
 }
 
 //end game func
-
+const endGame = () => {
+  if(playerScore == 5 || computerScore == 5) {
+    console.log('END GAME')
+  }
+}
 
 const playRound = (getplayerChoice, getComputerChoice) => {
-  console.log(getComputerChoice)
   if(getComputerChoice == getplayerChoice) {
     updateResult("It's a tie!");
   } else if(getplayerChoice == 'rock' && getComputerChoice == 'scissor') {
     updateResult("You win! Rock beats Scissors")
+    playerScore += 1;
+    updateScore()
   } else if(getplayerChoice == 'paper' && getComputerChoice == 'rock') {
     updateResult("You win! Paper beats Rock")
+    playerScore += 1;
+    updateScore()
   } else if(getplayerChoice == 'scissor' && getComputerChoice == 'paper') {
     updateResult("You win! Scissors beats Paper")
+    playerScore += 1;
+    updateScore()
   } else if(getplayerChoice == 'scissor' && getComputerChoice == 'rock') {
     updateResult("You lose! Rock beats Scissors")
+    computerScore += 1;
+    updateScore()
   } else if(getplayerChoice == 'rock' && getComputerChoice == 'paper') {
     updateResult("You lose! Paper beats Rock")
+    computerScore += 1;
+    updateScore()
   } else if(getplayerChoice == 'paper' && getComputerChoice == 'scissor') {
     updateResult("You lose! Scissor beats Paper")
+    computerScore += 1
+    updateScore
   }
- }
+  console.log(playerScore, computerScore)
+  endGame();
+}
 
 playerChoice();
 
