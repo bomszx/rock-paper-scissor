@@ -46,7 +46,18 @@ const playRound = (getplayerChoice, getComputerChoice) => {
   console.log(getComputerChoice)
   if(getComputerChoice == getplayerChoice) {
     updateResult("It's a tie!");
-    return 'Same';
+  } else if(getplayerChoice == 'rock' && getComputerChoice == 'scissor') {
+    updateResult("You win! Rock beats Scissors")
+  } else if(getplayerChoice == 'paper' && getComputerChoice == 'rock') {
+    updateResult("You win! Paper beats Rock")
+  } else if(getplayerChoice == 'scissor' && getComputerChoice == 'paper') {
+    updateResult("You win! Scissors beats Paper")
+  } else if(getplayerChoice == 'scissor' && getComputerChoice == 'rock') {
+    updateResult("You lose! Rock beats Scissors")
+  } else if(getplayerChoice == 'rock' && getComputerChoice == 'paper') {
+    updateResult("You lose! Paper beats Rock")
+  } else if(getplayerChoice == 'paper' && getComputerChoice == 'scissor') {
+    updateResult("You lose! Scissor beats Paper")
   }
  }
 
