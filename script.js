@@ -18,25 +18,39 @@ const playerChoice = () => {
   }))
 }
 
+// fn to update player/comp icon on the result banner
 const updateBanner = (playerIcon, computerIcon) => {
-  let player = document.getElementById('player-choice')
-  let computer = document.getElementById('computer-choice')
+  let player = document.getElementById('player-choice');
+  let computer = document.getElementById('computer-choice');
 
-  player.src = `./svg/${playerIcon}.png`
-  computer.src = `./svg/${computerIcon}.png`
+  player.src = `./svg/${playerIcon}.png`;
+  computer.src = `./svg/${computerIcon}.png`;
 }
 
+//fn to update the player/comp score, we pass the variables from playRound
+const updateScore = (playerScore, computerScore) => {
+  let pScore = document.getElementById('pScore');
+  let compSccore = document.getElementById('compScore');
+
+}
+
+const updateResult = (text) => {
+  let resultText = document.getElementById('resultText');
+  resultText.innerText  = `${text}`;
+}
+
+//end game func
+
+
 const playRound = (getplayerChoice, getComputerChoice) => {
-  let playerScore
-  let computerScore
   console.log(getComputerChoice)
   if(getComputerChoice == getplayerChoice) {
-    console.log('same')
-    return 'Same'
+    updateResult("It's a tie!");
+    return 'Same';
   }
  }
 
-playerChoice()
+playerChoice();
 
 
 
