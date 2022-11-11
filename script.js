@@ -43,8 +43,10 @@ const updateResult = (text) => {
 
 //end game func
 const endGame = () => {
-  if(playerScore == 5 || computerScore == 5) {
-    console.log('END GAME')
+  if(playerScore == 5) {  
+    updateResult(`You win with a score of ${playerScore}`) //how to put name of winner who scored 5?
+  } else if(computerScore == 5) {
+    updateResult(`Computer wins with a score of ${computerScore}`)
   }
 }
 
