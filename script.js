@@ -43,10 +43,15 @@ const updateResult = (text) => {
   resultText.innerText  = `${text}`;
 }
 
+const showModal = () => {
+  const modal = document.querySelector('.modal').style.display = 'block'
+}
+
 //endgame fn to disable the clickevents on the playerDiv
 const endGame = () => {
   const playerDiv = document.querySelector('.player-div')
   playerDiv.classList.add('endGame')
+  showModal();
   console.log('tangina mo tapusin mo')
 }
 
