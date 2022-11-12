@@ -44,7 +44,11 @@ const updateResult = (text) => {
 }
 
 const showModal = () => {
-  const modal = document.querySelector('.modal').style.display = 'block'
+  document.querySelector('.modal').style.display = 'block'
+}
+
+const hideModal = () => {
+  document.querySelector('.modal').style.display = 'none'
 }
 
 //endgame fn to disable the clickevents on the playerDiv
@@ -55,6 +59,18 @@ const endGame = () => {
   console.log('tangina mo tapusin mo')
 }
 
+const restartGame = () => {
+  const restartBtn = document.getElementById('modal-btn').addEventListener('click', (e) => {
+    console.log(e)
+    playerScore = 0;
+    computerScore = 0;
+    hideModal()
+    const playerDiv = document.querySelector('.player-div')
+    playerDiv.classList.remove('endGame')
+    updateScore()
+  })
+}
+
 //end game func
 const checkScore = () => {
   if(playerScore == 3) {  
@@ -62,6 +78,7 @@ const checkScore = () => {
     endGame();
   } else if(computerScore == 3) {
     updateResult(`Computer wins with a score of ${computerScore}`)
+    endGame();
   } 
 }
 
@@ -97,3 +114,4 @@ const playRound = (getplayerChoice, getComputerChoice) => {
 }
 
 playerChoice();
+restartGame()
