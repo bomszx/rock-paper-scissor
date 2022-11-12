@@ -36,11 +36,14 @@ const updateScore = () => {
   document.getElementById('compScore').innerText = computerScore;
 }
 
+
+//fn to update result banner
 const updateResult = (text) => {
   let resultText = document.getElementById('resultText');
   resultText.innerText  = `${text}`;
 }
 
+//endgame fn to disable the clickevents on the playerDiv
 const endGame = () => {
   const playerDiv = document.querySelector('.player-div')
   playerDiv.classList.add('endGame')
