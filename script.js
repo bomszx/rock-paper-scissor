@@ -41,13 +41,20 @@ const updateResult = (text) => {
   resultText.innerText  = `${text}`;
 }
 
-//end game func
 const endGame = () => {
-  if(playerScore == 5) {  
-    updateResult(`You win with a score of ${playerScore}`) //how to put name of winner who scored 5?
-  } else if(computerScore == 5) {
+  const playerDiv = document.querySelector('.player-div')
+  playerDiv.classList.add('endGame')
+  console.log('tangina mo tapusin mo')
+}
+
+//end game func
+const checkScore = () => {
+  if(playerScore == 3) {  
+    updateResult(`You win with a score of ${playerScore}`)
+    endGame();
+  } else if(computerScore == 3) {
     updateResult(`Computer wins with a score of ${computerScore}`)
-  }
+  } 
 }
 
 const playRound = (getplayerChoice, getComputerChoice) => {
@@ -76,27 +83,9 @@ const playRound = (getplayerChoice, getComputerChoice) => {
   } else if(getplayerChoice == 'paper' && getComputerChoice == 'scissor') {
     updateResult("You lose! Scissor beats Paper")
     computerScore += 1
-    updateScore
+    updateScore();
   }
-  console.log(playerScore, computerScore)
-  endGame();
+  checkScore()
 }
 
 playerChoice();
-
-
-
-
-
-
-
-
-//  playRound(playerChoice(), computerChoice())
-
-//  const game = () => {
-//   for(let i = 0; i < 5; i++) {
-//     playerChoice = prompt("What it'll be")
-//     playRound(playerChoice, computerChoice)
-//   }
-//  }
-// getComputerChoice() // this needs to be assigned to a variable so we can use it as a parameter but i don't wanna pollute my global scope
