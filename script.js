@@ -1,12 +1,14 @@
+
+
+let playerScore = 0;
+let computerScore = 0;
+
 // random num to represent computer choice
 const computerChoice = () => {
   let arr = ['rock', 'paper', 'scissor'];
   let i = Math.floor(Math.random() * 3);
   return  arr[i]; 
 }
-
-let playerScore = 0;
-let computerScore = 0;
 
 // eventlisteners to btn that assigns the click event to the selected icon then runs the playRound fn with the selected click event target
 const playerChoice = () => {
@@ -55,18 +57,17 @@ const hideModal = () => {
 const endGame = () => {
   const playerDiv = document.querySelector('.player-div')
   playerDiv.classList.add('endGame')
-  showModal();
+  showModal()
   console.log('tangina mo tapusin mo')
 }
 
 const restartGame = () => {
-  const restartBtn = document.getElementById('modal-btn').addEventListener('click', (e) => {
-    console.log(e)
+  document.getElementById('modal-btn').addEventListener('click', () => {
     playerScore = 0;
     computerScore = 0;
     hideModal()
     const playerDiv = document.querySelector('.player-div')
-    playerDiv.classList.remove('endGame')
+    playerDiv.classList.remove('endGame') //should this be restart game?
     updateScore()
   })
 }
