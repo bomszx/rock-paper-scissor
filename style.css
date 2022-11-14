@@ -181,10 +181,12 @@ font-size: 28px;
 font-weight: bold;
 }
 
+/* class that would fill the backround img of comp div to color red */
 .compChoice {
     background-color: red;
 }
 
+/* hover effect on the player div img */
 .player-div > img:hover {
     background-color: yellow;
 }

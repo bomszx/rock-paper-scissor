@@ -10,80 +10,74 @@
     <title>Document</title>
     
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
-        <header class="title-container">
-            <h1 class="title">ROCK, PAPER, SCISSORS!</h1>
-        </header>
-       
-        <main class="grid-container">
-            <div class="player tab">
-                <h2>Player</h2>
-                <div class="score">
-                    <p id="pScore">0</p>
-                </div>
-                <div class="player-div">
-                    <img src=".//svg/paper.png" id="paper" class="player-icon" alt="open hand">              
-
-                    <img src="./svg/rock.png" id="rock" class="player-icon" alt="open hand">
-
-                    <img src="./svg/scissor.png" id="scissor" class="player-icon" alt="open hand">
-                </div>
-
-
+    <header class="title-container">
+        <h1 class="title">ROCK, PAPER, SCISSORS!</h1>
+    </header>
+    
+    <main class="grid-container">
+        <div class="player tab">
+            <h2>Player</h2>
+            <div class="score">
+                <p id="pScore">0</p>
             </div>
+            <div class="player-div">
+                <img src=".//svg/paper.png" id="paper" class="player-icon" alt="open hand">              
 
-            <div class="results-container">
-                <div class="result-icons">
-                    <div class="player-choice">
-                        <img id="player-choice" src="./svg/question-mark.png" alt="">
-                    </div>
+                <img src="./svg/rock.png" id="rock" class="player-icon" alt="open hand">
 
-                    <div class="decision-choice">
-                        <img src="./svg/equal.png" alt="">
-                    </div>
-        
-                    <div class="computer-choice">
-                        <img id="computer-choice" src="./svg/question-mark.png" alt="">
-                    </div>
+                <img src="./svg/scissor.png" id="scissor" class="player-icon" alt="open hand">
+            </div>
+        </div>
+
+        <div class="results-container">
+            <div class="result-icons">
+                <div class="player-choice">
+                    <img id="player-choice" src="./svg/question-mark.png" alt="">
+                </div>
+
+                <div class="decision-choice">
+                    <img src="./svg/equal.png" alt="">
                 </div>
     
-                <div class="results-tab">
-                    <div class="result-banner">
-                        <p id="resultText"></p>
-                    </div>
+                <div class="computer-choice">
+                    <img id="computer-choice" src="./svg/question-mark.png" alt="">
                 </div>
             </div>
 
-            <div class="computer tab">
-                <h2>Computer</h2>
-                <div class="score">
-                    <p id="compScore">0</p>
+            <div class="results-tab">
+                <div class="result-banner">
+                    <p id="resultText"></p>
                 </div>
-                <div class="computer-div">
-                    <img src=".//svg/paper.png" id="comp-paper" alt="open hand">
-
-                    <img src="./svg/rock.png"  id="comp-rock" alt="open hand">
-
-                    <img src="./svg/scissor.png"  id="comp-scissor" alt="open hand">
-                </div>
-
             </div>
-        </main>
-        
-        <footer class="footer-container">
-            <a href="https://www.flaticon.com/free-icons/hands-and-gestures" title="hands and gestures icons">Hands and gestures and special characters created by Freepik  & Md Tanvirul Haque</a>
-        </footer>
-
-
-
-        <div class="modal-content">
-            <p id="modal-message">This is a test message</p>
-            <button id="modal-btn">Play again?</button>
         </div>
-        <div class="modal"></div>
 
+        <div class="computer tab">
+            <h2>Computer</h2>
+            <div class="score">
+                <p id="compScore">0</p>
+            </div>
+            <div class="computer-div">
+                <img src=".//svg/paper.png" id="comp-paper" alt="open hand">
+
+                <img src="./svg/rock.png"  id="comp-rock" alt="open hand">
+
+                <img src="./svg/scissor.png"  id="comp-scissor" alt="open hand">
+            </div>
+
+        </div>
+    </main>
+    
+    <footer class="footer-container">
+        <a href="https://www.flaticon.com/free-icons/hands-and-gestures" title="hands and gestures icons">Hands and gestures and special characters created by Freepik  & Md Tanvirul Haque</a>
+    </footer>
+
+    <div class="modal-content">
+        <p id="modal-message">This is a test message</p>
+        <button id="modal-btn">Play again?</button>
+    </div>
+    <div class="modal"></div>
     <script src="script.js"></script>
 </body>
 </html>

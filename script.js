@@ -23,12 +23,14 @@ const playerChoice = () => {
   }))
 }
 
+// this fn runs from the playerChoice fn, will use the cChoice variable from that function which will be a string from the compChoice arr, then simple find that string/cChoice on the DOM then add the compChoice class to color it's background, remove the color after 450 millisecons using setTimeOut
 const highLight = (target) => {
   document.getElementById(`comp-${target}`).classList.add('compChoice');
   setTimeout(() => {
     document.getElementById(`comp-${target}`).classList.remove('compChoice');
   }, "400")
 }
+
 // fn to update player/comp icon on the result banner
 const updateBanner = (playerIcon, computerIcon) => {
   let player = document.getElementById('player-choice');
@@ -51,6 +53,7 @@ const updateResult = (text) => {
   resultText.innerText  = `${text}`;
 }
 
+// fn to show modal/modal-content, with a message for the winner which depends on the scores of both player
 const showModal = () => {
   const p = document.getElementById('modal-message');
   document.querySelector('.modal').style.display = 'block';
@@ -62,7 +65,7 @@ const showModal = () => {
     p.innerText = 'You lost :('
   }
 }
-
+// hide modal
 const hideModal = () => {
   document.querySelector('.modal').style.display = 'none';
   document.querySelector('.modal-content').style.display = 'none';
