@@ -1,6 +1,8 @@
 :root {
     --black: #000000FF;
-    --white: #EFF5F5
+    --white: #EFF5F5;
+
+    --font: 'Walter Turncoat', cursive;
 }
 
 
@@ -15,8 +17,13 @@ body {
     background-color: var(--black);
 }
 
-h1, p, footer, a {
+h1, h2, p, footer, a {
     color: var(--white);
+    font-family: var(--font);
+}
+
+h2 {
+    font-size: 2.5rem;
 }
 
 .title-container {
@@ -37,13 +44,22 @@ h1, p, footer, a {
     justify-content: center;
     margin: auto;
     width: 100%;
+    gap: 2rem;
+}
+
+.results-container {
+    border: .2em dashed var(--white);
+    font-size: 2.5rem;
+    padding: 1rem;
+    width:  500px;
+    text-align: center;
 }
 
 .footer-container {
     position: fixed;
     bottom: 0;
     width: 100vw;
-    font-size: .9rem;
+    font-size: 1rem;
 }
 
 
@@ -67,6 +83,11 @@ h1, p, footer, a {
     grid-row: 1 / 4;
 }
 
+.score {
+    font-size: 3rem;
+    font-weight: 900;
+}
+
 /* Left and Right Tabs */
 .tab {
     display: flex;
@@ -76,8 +97,8 @@ h1, p, footer, a {
 }
 
 .player-div > img, .computer-div > img {
-    height: 8rem;
-    width: 8rem;
+    height: 7rem;
+    width: 7rem;
     display: flex;
     align-items: center;
     outline: none;
@@ -91,12 +112,16 @@ h1, p, footer, a {
 .result-icons {
     display: flex;
     align-items: center;
-
 }
 
 .result-icons img {
-    height: 100px;
-    width: 100px;
+    height: 8rem;
+    width: 8rem;
+}
+
+.decision-choice img {
+    height: 5rem;
+    width: 5rem;
 }
 
 .footer-container {
@@ -129,14 +154,26 @@ h1, p, footer, a {
     position: fixed;
     top: 50%;
     left: 50%;
-    margin-top: -100px; /* Negative half of height. */
+    margin-top: -250px; /* Negative half of height. */
     margin-left: -150px; /* Negative half of width. */
-    padding: 30px;
+    padding: 2rem;
     border-radius: 10px;
-    background-color: red;
+    background-color: var(--black);
     border: 1px solid #888;
     width: 300px; /* Could be more or less, depending on screen size */
     text-align: center;
+    font-family: var(--font);
+    font-size: 2.5rem;
+  }
+
+  #modal-btn {
+    margin-top: 1rem;
+    font-family: var(--font);
+    font-weight: 500;
+    font-size: 1.5rem;
+    padding: .5rem;
+    background-color: var(--white);
+    border-radius: 10px;
   }
   
   /* The Close Button */

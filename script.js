@@ -46,8 +46,15 @@ const updateResult = (text) => {
 }
 
 const showModal = () => {
+  const p = document.getElementById('modal-message');
   document.querySelector('.modal').style.display = 'block';
   document.querySelector('.modal-content').style.display = 'block';
+
+  if(playerScore > computerScore) {
+    p.innerText = 'You won!'
+  } else {
+    p.innerText = 'You lost :('
+  }
 }
 
 const hideModal = () => {
