@@ -52,7 +52,7 @@ const showModal = () => {
 
 const hideModal = () => {
   document.querySelector('.modal').style.display = 'none';
-  document.querySelector('.modal-content').style.display = 'block';
+  document.querySelector('.modal-content').style.display = 'none';
 }
 
 //endgame fn to disable the clickevents on the playerDiv
