@@ -129,9 +129,6 @@ h2 {
     pointer-events: none;
 }
 
-.player-div > img {
-    background-color: var(--white);
-}
 /* The Modal (background) */
 
 /* currently the modal-content is sliding because it's moving with the modal div, if I want it to stay in one place, maybe we should put the modal and the modal-content into separte divs? */
@@ -186,4 +183,8 @@ font-weight: bold;
 
 .compChoice {
     background-color: red;
+}
+
+.player-div > img:hover {
+    background-color: yellow;
 }

@@ -27,7 +27,7 @@ const highLight = (target) => {
   document.getElementById(`comp-${target}`).classList.add('compChoice');
   setTimeout(() => {
     document.getElementById(`comp-${target}`).classList.remove('compChoice');
-  }, "300")
+  }, "400")
 }
 // fn to update player/comp icon on the result banner
 const updateBanner = (playerIcon, computerIcon) => {
