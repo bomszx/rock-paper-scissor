@@ -1,5 +1,3 @@
-
-
 let playerScore = 0;
 let computerScore = 0;
 
@@ -16,13 +14,21 @@ const playerChoice = () => {
 
   document.querySelectorAll('.player-icon').forEach((icon) => icon.addEventListener('click', (e) => {
     //click will call our playRound fn
-    let cChoice = computerChoice()
+    let cChoice = computerChoice();
     pChoice = e.target.id
+    highLight(cChoice)
     playRound(pChoice, cChoice)
     updateBanner(pChoice, cChoice)
+    return cChoice
   }))
 }
 
+const highLight = (target) => {
+  document.getElementById(`comp-${target}`).classList.add('compChoice');
+  setTimeout(() => {
+    document.getElementById(`comp-${target}`).classList.remove('compChoice');
+  }, "300")
+}
 // fn to update player/comp icon on the result banner
 const updateBanner = (playerIcon, computerIcon) => {
   let player = document.getElementById('player-choice');
@@ -32,14 +38,14 @@ const updateBanner = (playerIcon, computerIcon) => {
   computer.src = `./svg/${computerIcon}.png`;
 }
 
-//fn to update the player/comp score, we pass the variables from playRound
+// fn to update the player/comp score, we pass the variables from playRound
 const updateScore = () => {
   document.getElementById('pScore').innerText = playerScore;
   document.getElementById('compScore').innerText = computerScore;
 }
 
 
-//fn to update result banner
+// fn to update result banner
 const updateResult = (text) => {
   let resultText = document.getElementById('resultText');
   resultText.innerText  = `${text}`;
@@ -62,14 +68,14 @@ const hideModal = () => {
   document.querySelector('.modal-content').style.display = 'none';
 }
 
-//endgame fn to disable the clickevents on the playerDiv
+// endgame fn to disable the clickevents on the playerDiv
 const endGame = () => {
   const playerDiv = document.querySelector('.player-div')
   playerDiv.classList.add('endGame')
   showModal()
-  console.log('tangina mo tapusin mo')
 }
 
+// restartGame fn, sets score variables to zero, hides modal, and enables the player div
 const restartGame = () => {
   document.getElementById('modal-btn').addEventListener('click', () => {
     playerScore = 0;
@@ -81,17 +87,18 @@ const restartGame = () => {
   })
 }
 
-//end game func
+// end game func
 const checkScore = () => {
-  if(playerScore == 3) {  
+  if(playerScore == 5) {  
     updateResult(`You win with a score of ${playerScore}`)
     endGame();
-  } else if(computerScore == 3) {
+  } else if(computerScore == 5) {
     updateResult(`Computer wins with a score of ${computerScore}`)
     endGame();
   } 
 }
 
+// playRound funct gets playerChoice from playerChoice fn adn getComputerChoice from computerChoice fn
 const playRound = (getplayerChoice, getComputerChoice) => {
   if(getComputerChoice == getplayerChoice) {
     updateResult("It's a tie!");

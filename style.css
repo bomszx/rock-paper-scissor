@@ -62,7 +62,6 @@ h2 {
     font-size: 1rem;
 }
 
-
 /* results container, middle thingy */
 .results-container {
     display: flex;
@@ -71,7 +70,6 @@ h2 {
     flex-direction: column;
     grid-row:  2/ 3;        
 }
-
 
 .player {
     grid-column: 1 / 2;
@@ -103,10 +101,9 @@ h2 {
     align-items: center;
     outline: none;
     margin: 2.5rem;
-    border: 1px solid black;
+    border: 1px dashed var(--white);
     border-radius: 20px;
 }
-
 
 /* Results */
 .result-icons {
@@ -132,6 +129,9 @@ h2 {
     pointer-events: none;
 }
 
+.player-div > img {
+    background-color: var(--white);
+}
 /* The Modal (background) */
 
 /* currently the modal-content is sliding because it's moving with the modal div, if I want it to stay in one place, maybe we should put the modal and the modal-content into separte divs? */
@@ -145,41 +145,45 @@ h2 {
     height:100vh; /* Full height */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
+}
   
-  /* Modal Content/Box */
-  .modal-content {
-    display: none;
-    z-index: 1;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-top: -250px; /* Negative half of height. */
-    margin-left: -150px; /* Negative half of width. */
-    padding: 2rem;
-    border-radius: 10px;
-    background-color: var(--black);
-    border: 1px solid #888;
-    width: 300px; /* Could be more or less, depending on screen size */
-    text-align: center;
-    font-family: var(--font);
-    font-size: 2.5rem;
-  }
+ /* Modal Content/Box */
+.modal-content {
+display: none;
+z-index: 1;
+position: fixed;
+top: 50%;
+left: 50%;
+margin-top: -250px; /* Negative half of height. */
+margin-left: -150px; /* Negative half of width. */
+padding: 2rem;
+border-radius: 10px;
+background-color: var(--black);
+border: 1px solid #888;
+width: 300px; /* Could be more or less, depending on screen size */
+text-align: center;
+font-family: var(--font);
+font-size: 2.5rem;
+}
 
-  #modal-btn {
-    margin-top: 1rem;
-    font-family: var(--font);
-    font-weight: 500;
-    font-size: 1.5rem;
-    padding: .5rem;
-    background-color: var(--white);
-    border-radius: 10px;
-  }
+#modal-btn {
+margin-top: 1rem;
+font-family: var(--font);
+font-weight: 500;
+font-size: 1.5rem;
+padding: .5rem;
+background-color: var(--white);
+border-radius: 10px;
+}
   
-  /* The Close Button */
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
+/* The Close Button */
+.close {
+color: #aaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
+}
+
+.compChoice {
+    background-color: red;
+}
